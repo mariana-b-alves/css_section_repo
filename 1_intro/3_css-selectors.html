@@ -4,9 +4,106 @@
 		<title>CSS Selectors</title>
 	</head>
 	<body>
+		<style>
+			/*Seletores de CSS*/
+
+			/*Seletor Universal*/
+			/* *{
+				font-family: Arial;
+			} */
+
+			/*Seletores de Elementos (tags html)*/
+			body{
+				font-family: Arial; 
+				
+				/*Herança*/ 
+				/*Diferença do Asterisco para body:
+				- Asterisco - cria uma regra para tudo sem sobreposições;
+				- Body - cria regras para elementos individualmente e de acordo com as regras de herança (sobreposição) */
+				/*Asterisco normalmente utilizado para tirar defaults*/
+
+			}
+
+			h1, h2, h3{
+				color: darkgreen;
+			}
+
+			p{
+				font-family: Courier;
+			}
+
+			/*Classes de Formatação*/
+
+			/*Classes Independentes*/
+
+			.destaque{
+				color: tomato;
+				font-style: italic;
+				margin: 10px 50px;
+			}
+
+			/*Classes Dependentes*/
+			 /* p.destaque{
+				color: tomato;
+				font-style: italic;
+				margin: 10px 50px;
+			} */
+
+			.xpto{
+				font-weight: bold;
+				background-color: crimson;
+				color: aliceblue;
+			}
+
+			/*Seletores de IDs (A evitar)*/
+
+			/*Características do id - ser único: não devemos usar um id para mais do que 1 elemento*/
+			/*A evitar devido à sua grande especifidade, a classe mantem-se nas dezenas e o id nas centenas; mais difícil de manipular*/
+			/*Limitar os ids para o JS; para CSS, deveremos usar classes*/
+			
+			#introduction{
+				background-color: aqua;
+			}
+
+			/*Seletores contextuais/descendentes*/
+			section.noticias h1{
+				background-color: chocolate;
+				color: antiquewhite
+			}
+
+			/*Seletores descendentes de 1º Nível*/
+			section.noticias > h1{
+				background-color: tomato;
+			}
+
+			ul > li a{
+				text-decoration: none;
+				color: brown;
+			}
+
+			/*ESPECIFICIDADES das regras*/
+
+			/*
+			 A             B            C
+			(id)       (classes)    (elementos)
+        1-   0             2           4
+		2-   1             1           2
+			
+			*/
+			main.conteudos section.noticias p a{
+				color: red; /*1*/
+			}
+
+			#conteudos p a.btn{
+				color: blue; /*2*/
+			}
+
+
+		</style>
+
 		<h1><a id="top">Kitchen Garden Calendar</a></h1>
 		<p id="introduction">Here you can read our handy guide about what to do when.</p>
-		<h2>Spring</h2>
+		<h2 class="destaque xpto">Spring</h2>
 		<ul>
 			<li><a href="../../_css_inicio_parte1/1_intro/mulch.html">Spring mulch vegetable beds</a></li>
 			<li><a href="../../_css_inicio_parte1/1_intro/potato.html">Plant out early potatoes</a></li>
@@ -14,8 +111,32 @@
 			<li><a href="../../_css_inicio_parte1/1_intro/beet.html">Sow beet seeds</a></li>
 			<li><a href="../../_css_inicio_parte1/1_intro/zucchini.html">Sow zucchini seeds</a></li>
 			<li><a href="../../_css_inicio_parte1/1_intro/rhubarb.html">Deadhead rhubarb flowers</a></li>
+			<ol>
+				<li><a href="#">Um</a></li>
+				<li><a href="#">Dois</a></li>
+				<li><a href="#">Três</a></li>
+			</ol>
 		</ul>
 		<p class="note">This page was written by <a href="mailto:jon@example.org">jon@example.org</a> for <a href="http://www.wiley.com">Wiley</a>.</p>
 		<p><a href="#top">Top of page</a></p>
+
+		<section>
+			<h1>Título de Outra Section</h1>
+		</section>
+
+		<section class="noticias">
+			<h1>Secção de Notícias</h1>
+			<p class="destaque">Área de notícias da minha página.</p>
+
+			<article>
+				<h1>Título da Notícia 1</h1>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, nobis ea! Perferendis, animi vitae! Enim, adipisci ad repellat explicabo est at magni quos nesciunt sapiente pariatur modi necessitatibus, corrupti dolore.</p>
+			</article>
+
+			<article>
+				<h1>Título da Notícia 2</h1>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, nobis ea! Perferendis, animi vitae! Enim, adipisci ad repellat explicabo est at magni quos nesciunt sapiente pariatur modi necessitatibus, corrupti dolore.</p>
+			</article>
+		</section>
 	</body>
 </html>
