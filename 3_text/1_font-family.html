@@ -3,8 +3,37 @@
 
 <head>
     <title>Font Family</title>
-    <style type="text/css">
-       
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap'); 
+
+
+    /*Fontes localmente vs. repositório - 
+    
+    Localmente - Vai SEMPRE fazer (re-)download da fonte - mais peso para o computador
+
+    Repositório -  Não faz (re-)download*/
+
+    
+        @font-face {
+            font-family: my-font;
+            src: url(fonts/chunkfive.ttf);
+        }
+
+        
+
+        p {
+            font-family: Oswald;
+        }
+
+
+
+       body{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       }
+
+       /*Benefício - Ter opções para todos so browsers*/
+
     </style>
 </head>
 
