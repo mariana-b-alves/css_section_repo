@@ -5,7 +5,8 @@
         <style type="text/css">
 
             /*NOTA - Má prática usar px*/
-            /*px implica que, caso o nosso cliente não goste do tamanho da nossa fonte, teremos que */
+            /*px implica que, caso o nosso cliente não goste do tamanho da nossa fonte, teremos que mudar todas as medidas.
+            Ao usar relativas (especialmente em), é só preciso mudar o body, que as restantes medidas ajustam-se.*/
 
             /*Unidades de medida absoluta (a evitar) :*/
             /*px, pt, pc, mm, cm, in, ...*/
@@ -14,24 +15,35 @@
             /*em, exs, %, vw, vh, rem*/
 
             body{
-                font-size: 16px; /*default*/
+                font-size: 18px; /*default*/
             }
 
             /*O único sítio que devemos usar o px é no body*/
 
             h1{
-                font-size: 40px;
+                /* font-size: 40px; */
+                /*1 em-----16px
+                    x------40px*/
+                /* font-size: 2.5em; */
+                font-size: 2.5rem;
             }
 
             h2{
-                font-size: 32px;
+                font-size: 1.125em;
             }
 
             p{
                 font-size: 18px;
             }
 
-            /*Boa prática de convenção - 16-18px*/
+            section {
+                font-size: .5em;
+            }
+
+            /*Boa prática de convenção - 16-18px (mas mais 18px)*/
+
+            /*em - x vezes o tamanho do body
+            rem - x vezes o tamanho do container que o elemento está inserido*/
         </style>
         
     </head>
@@ -42,6 +54,11 @@
         <h2>Breed History</h2>
         <p>The briard, which is believed to have originated in France, has been bred for centuries to herd and to protect sheep. The breed was used by the French Army as sentries, messengers and to search for wounded soldiers because of its fine sense of hearing. Briards were used in the First World War almost to the point of extinction. Currently the population of briards is slowly recovering. Charlemagne, Napoleon, Thomas Jefferson and Lafayette all owned briards.</p>
 
-        
+        <section>
+            <h1>Título da Section</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, quaerat soluta aspernatur numquam facilis ratione quisquam maxime doloremque expedita, ullam laudantium magni, eligendi autem voluptatem accusamus? Voluptates quas facere debitis.</p>
+                <p>Culpa ab nemo incidunt laborum inventore quia labore impedit, doloremque eius fugiat numquam sit officiis, quos quas repellat explicabo consectetur dolorum error! Eius iure repellendus deserunt, est illo alias sint!</p>
+                <p>Vel laborum voluptatibus dolor laboriosam sunt ab quaerat sit porro adipisci atque. Eum aspernatur doloremque quisquam libero molestias, maiores dolore, recusandae vitae at laudantium dolorem iusto possimus quasi, tempora ad?</p> 
+        </section>
     </body>
 </html>
