@@ -3,12 +3,46 @@
     <head>
         <title>Image Sizes</title>
         <style type="text/css">
+        /*Pseudoclasses*/
+
+        img.medium{
+            /* width: 200px; */
+            width: 250px;
+            height: 250px;
+
+            /*Max-width: regra de como colocar uma img responsive; à medida que o ecrã diminui, a img tbm diminui*/
+            float: left;
+            margin-right: 1em;
+        }
+
+        img.dois{
+            width: 250px;
+            height: 250px;
+
+            float: right;
+            margin-left: 1em;
+        }
+
+        img{
+            display: block;
+        }
+
+        /*Como centrar imgs*/
+
+        /*Imagem - Elemento de Linha*/
+
 
         </style>
     </head>
     <body>
-        <img src="images/magnolia-large.jpg" alt="Magnolia" />
-        <img src="images/magnolia-medium.jpg" alt="Magnolia" />
-        <img src="images/magnolia-small.jpg" alt="Magnolia" />
+        <img src="images/magnolia-medium.jpg" alt="Magnolia" class="medium" />
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati assumenda doloremque, saepe sapiente vitae magni a? Officia suscipit laudantium expedita qui illo dicta dolorum? Quidem iure laborum nostrum deserunt cum!</p>
+        <p>Impedit, obcaecati eius! Ipsam officia autem, deleniti ipsa consectetur recusandae accusamus optio nisi accusantium. Tempore eius labore atque esse delectus maxime! Deserunt praesentium, sequi quaerat eligendi mollitia corporis beatae aspernatur?</p>
+        <p>Porro quis rem similique omnis dolor exercitationem delectus at fuga asperiores assumenda quidem est, ratione possimus illo eum quos, officiis expedita id accusamus! Reiciendis, sed necessitatibus. Dignissimos quas sequi consequatur!</p>
+        <p>Suscipit ratione sit quas. Excepturi totam quis at, blanditiis illum quidem provident iste nulla, exercitationem enim minus quo dolore ipsam delectus rem repellendus rerum saepe a quae. Id, adipisci ut!</p>
+        <p>Corrupti nulla enim necessitatibus, itaque consequatur fuga officiis, nihil nisi pariatur rem sunt quos temporibus quidem fugit voluptate maxime quas mollitia totam impedit amet. Animi quia eum perspiciatis labore consequuntur!</p>
+        <p>Explicabo, id assumenda. Pariatur eos, aspernatur maiores temporibus aperiam velit blanditiis consequuntur ipsam odit incidunt libero. Similique ullam doloremque nesciunt. Similique, omnis magni corrupti ipsum id tempore cumque repellendus eveniet.</p>
+        <img src="images/magnolia-small.jpg" alt="Magnolia" class="2"/>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, repellendus error, recusandae minus aut facilis cupiditate similique perferendis incidunt nulla quia neque iusto, praesentium vel rem libero debitis nostrum dicta!</p>
     </body>
 </html>

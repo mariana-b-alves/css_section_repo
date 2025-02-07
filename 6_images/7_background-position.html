@@ -6,7 +6,27 @@
             body {
 
                 color: #665544;
-                padding: 20px;}
+                padding: 20px;
+            }
+
+            body{
+                background-image: url(images/tulip.gif), url(images/magnolia-large.jpg); 
+                
+                /*Pode-se ou não colocar aspas - desde que sejamos consistentes*/
+
+                /* background-position: center center; */ 
+                
+                /*Centrar horizontal e verticalmente respetivamente*/
+
+                background-repeat: no-repeat;
+                /*Um só valor de background-position aplica a tds as imgs; se se dividirmos os valores com vírgula, afeta cada img respetivamente*/
+                /*No caso do background-position, podemos usar valores tanto relativos, como absolutos, como percentuais*/
+                background-position: top left, 20% 300px;
+
+                /*Imagem centra em relação ao body - caso o body tenha propriedades como padding, margin, etc, ela desformata/não se centra como deve ser*/
+
+
+            }
         </style>
     </head>
     <body>
