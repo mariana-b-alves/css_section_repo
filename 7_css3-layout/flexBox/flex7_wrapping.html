@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <link rel="stylesheet" href="basic.css">
+    <style>
+        .container {
+            border: 5px solid #ffcc5c;
+            display: flex;
+
+            /*default: flex-wrap: nowrap; */
+            /* flex-wrap: wrap; */
+            flex-wrap: wrap-reverse;
+        }
+
+        .container > div{
+            width: 300px;
+        }
+
+        /*Flex-wrap: wrap -  faz com que os elementos vão para baixo caso não haja espaço no viewport; o wrap-reverse faz com que os elementos vão para cima*/
+    </style>
+</head>
+
+<body>
+    <nav class="container">
+        <div class="home">Home</div>
+        <div class="search">Search</div>
+        <div class="logout">Logout</div>
+    </nav>
+</body>
+</html>
