@@ -6,17 +6,33 @@
         .container {
             display: grid;
             grid-gap: 3px;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: 40px 40px;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 80px 200px 80px;
         }
 
-        .header {}
+        .header {
+            /* grid-column-start: 1;
+            grid-column-end: 3; */
+            /* grid-column: 1 / -1; */
+            grid-column: 3 / -1;
+        }
 
-        .menu {}
+        /*Nas colunas e linhas, temos 3 pontos de divisão: início, meio e fim. 1 sendo o início, 3 o fim. Isto implica que se vá do ponto 1 ao ponto 3*/
 
-        .content {}
+        .menu {
+            grid-column: 1 / span 2;
+            grid-row: 1 / -1;
+        }
 
-        .footer {}
+        .content {
+            grid-column: span 10;
+        }
+
+        .footer {
+            grid-column: 3 / -1;
+        }
+
+        /*Grids e flexboxes dão a vantagem de não se ter que alterar TODO o HTML para que se ajuste um ou mais elementos no layout; pode-se fazer tudo com CSS.*/
         
     </style>
 </head>

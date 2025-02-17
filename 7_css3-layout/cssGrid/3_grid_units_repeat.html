@@ -6,11 +6,17 @@
             
             .container {
                 display: grid;
-                grid-template-columns: 100px auto 100px; 
-                grid-template-rows: 50px 50px; 
+                /* grid-template-columns: 1fr 1fr 1fr;  */
+                /* grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 50px 50px;  */
                 grid-gap: 3px; 
+
+                grid-template: repeat(2 100px) / repeat(3 1fr); /*Shorthand: row / column*/
                 
             }
+
+            /*Fr - Fraction; Implica a fração que cada elemento ocupa na viewport*/
+            /*A função repeat() tem o mesmo objetivo que o fr*/
             
             
         </style>

@@ -10,24 +10,37 @@
             display: grid;
             grid-gap: 3px;
             grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: 40px auto 40px;
-            
-            
+            grid-template-rows: 80px auto 80px;
+
+            grid-template-areas: 
+            "h h h h h h h h h h h h"
+            "m m c c c c c c c c c ."
+            ". f f f f f f f f f f f";
             
         }
+
+        /*Mapeameno do layout; as letras correspondem a cada célula; dps na grid-area é só definir a letra para o elemento que queremos afetar.*/
+        /*Grid tem de ser uniforme: se a 1ª linha tem 12 células, a 2ª também tem de ter*/
+        /*Se quisermos que uma célula esteja "vazia" no início ou no fim, é só colocar um ponto*/
         
         .header {
-            grid-column: 1 / -1; 
+           /*  grid-column: 1 / -1;  */
+           grid-area: h;
         }
 
-        .menu {}
+        .menu {
+            grid-area: m;
+        }
 
         .content { 
-            grid-column: 2 / -1;
+            /* grid-column: 2 / -1; */
+            grid-area: c;
+
         }
 
         .footer {
-            grid-column: 1 / -1;
+            /* grid-column: 1 / -1; */
+            grid-area: f;
             
         }
         
