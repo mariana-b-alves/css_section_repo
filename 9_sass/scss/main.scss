@@ -1,0 +1,67 @@
+//@import 'variables'; //Não se usa underscore nem extensões
+@use 'variables'; //@use em vez de @import no caso de importar partials; definir um "contexto" (namespace)
+@use 'variables' as *;
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+/* body{
+    background-color: variables.$light-color; //Cor de fundo
+    color: variables.$dark-color; //Usar variables para buscar variáveis do ficheiro "variables.scss"; benéfico porque, se formos buscar coisas de outro ficheiro, não entra em conflito
+    font-family: variables.$font-stack;
+    line-height: 1.5;
+} */
+
+body{
+    background-color: $light-color; //Cor de fundo
+    color: $dark-color; //Usar variables para buscar variáveis do ficheiro "variables.scss"; benéfico porque, se formos buscar coisas de outro ficheiro, não entra em conflito
+
+    /* font-family: $font-stack;
+    line-height: 1.5; */
+
+    /*Nested properties*/
+
+    font : { //Dois pontos necessários!!!
+        family: $font-stack;
+        line-height: 1.5;
+    }
+    
+}
+
+/*Se der erro: Parar de fazer watch (Ctrl-C), fazer refresh ao browser e recomeçar*/
+
+header{
+    background-color: $dark-color;
+    color: $light-color;
+    padding: 1rem;
+
+    h1{
+        text-align: center; // Em vez de ser fazer header h1, coloca-se o h1 dentro do header
+    }
+}
+
+.section {
+    padding: 3rem;
+    &-a{
+        background-color: $primary-color;
+        color: white
+    }
+
+    &-a{
+        background-color: $primary-color; //Em vez de se fazer .section .section-a .section-b, começa-se com o section e colocam-se as outras 2 classes dentro dela 
+        color: white
+    }
+}
+
+a{
+    color:#333;
+
+    &:hover{ //Como se definem pseudo-classes no SASS
+        color:color
+    }
+}
+
+/*NOTA: Não há limite de indentação*/
