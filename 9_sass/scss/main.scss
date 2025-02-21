@@ -1,6 +1,9 @@
 //@import 'variables'; //Não se usa underscore nem extensões
 @use 'variables'; //@use em vez de @import no caso de importar partials; definir um "contexto" (namespace)
 @use 'variables' as *;
+@use 'functions' as *;
+@use 'btns' as *;
+
 *{
     margin: 0;
     padding: 0;
@@ -35,7 +38,7 @@ body{
 
 header{
     background-color: $dark-color;
-    color: $light-color;
+    color: set-text-color($dark-color);
     padding: 1rem;
 
     h1{
@@ -47,21 +50,44 @@ header{
     padding: 3rem;
     &-a{
         background-color: $primary-color;
-        color: white
+        color: set-text-color($primary-color);
+        /* color: white */
     }
 
-    &-a{
-        background-color: $primary-color; //Em vez de se fazer .section .section-a .section-b, começa-se com o section e colocam-se as outras 2 classes dentro dela 
-        color: white
-    }
-}
+    &-b{
+        background-color: $secondary-color; //Em vez de se fazer .section .section-a .section-b, começa-se com o section e colocam-se as outras 2 classes dentro dela (& para não repetir o nome da classe)
 
-a{
-    color:#333;
-
-    &:hover{ //Como se definem pseudo-classes no SASS
-        color:color
+        //Não há limites de hieraquia
+        color: set-text-color($secondary-color);
+        /* color: white; */
     }
 }
 
+.btn{
+    &-light{
+        @extend %btn-shared;
+        background-color: $light-color;
+        /* color: #333; */
+        color: set-text-color($light-color);
+
+        &:hover{
+            @include transform(rotate(10deg));
+        }
+    }
+
+    &-dark{
+        @extend %btn-shared;
+        background-color: $dark-color;
+        color: set-text-color($dark-color);
+
+        &:hover{
+            @include transform(rotate(-5deg));
+        }
+        /* color: #fff; */
+    }
+}
 /*NOTA: Não há limite de indentação*/
+
+/*Função -  um "elemento" que recebe propriedades e que me retorna qualquer coisa*/
+/*Mix-in - Extend, mas consigo passar parâmetros lá para dentro*/
+/*Modules - Blocos de propriedades*/
