@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /*A root está acima do HTML - engloba TODA a viewport*/
+        /*Definir variáveis*/
+        :root{
+            --cor-principal: rgb(211, 138, 173);
+            --cor-secundaria: rgb(93, 158, 118);
+            --bg-color: yellow;
+
+            --fonte-principal: Courier;
+            --margin-large: 200px;
+            --margin-small: 50px;
+        }
+            /*Scope das variáveis*/
+            /*Scope - contexto onde as variáveis existem*/
+
+        main{
+            --bg-color: yellow;
+
+            width: calc(100vw - var(--margin-large));
+            margin: 20px auto;
+        }
+
+        h1 {
+            background-color: var(--bg-color);
+        }
+
+        input[type="text"] {
+            background-color: var(--cor-principal);
+        }
+
+        p[class*="destaque"]{
+            background-color: var(--cor-secundaria);
+        }
+        p{
+            font-family: var(--fonte-principal);
+            font-size: .7em;
+        }
+
+        /* a[href$="pdf"]{
+            padding-right: 1em;
+            background-image: url("pdf.png");
+            background-repeat: no-repeat;
+            background-position: right center;
+        } */
+
+        /* a[href$="pdf"]::after{
+            content: url(pdf.png);
+            margin-left: 1px;
+        } */
+
+        /* a[href$="pdf"]::before{
+            content: url(pdf.png);
+            margin-right: 1px;
+        } */
+
+        a[href$="pdf"]::after{
+            content: '🐺';
+            margin-left: 1px;
+        }
+
+        a[href^="http://"]::after{
+            /* content: url(open-new.png); */
+            content: url(open-new.png);
+            content: "🐸"
+
+        }
+
+        input::placeholder{
+            color: tomato;
+        }
+
+        p::selection{
+            background-color: yellowgreen;
+        }
+
+        /*::after - cria um pseudo-elemento que é o último filho do elemento selecionado. Muitas vezes é usado para adicionar e melhorar o conteúdo de um elemento como a propriedade content. É inline por padrão.*/
+
+        /*::before - cria um pseudo-elemento que é o primeiro filho do elemento selecionado. Muitas vezes é usado para adicionar e melhorar o conteúdo de um elemento como a propriedade content. É inline por padrão.*/
+        
+    </style>
+</head>
+<body>
+    <h1>Seletores, Atributos, Pseudos, Variáveis</h1>
+    <hr>
+    <main>
+        <h1>Título do main</h1>
+        <p>
+            <input type="text" value="Mariana"> <br>
+            <input type="email" placeholder="Inserir email">
+        </p>
+
+        <p>
+            Ler o nosso <a href="relatorio.pdf">relatório</a> de qualquer coisa
+        </p>
+
+        <p class="destaque">Voluptas vero <a href="http://flag.pt" target="_blank">SITE DA FLAG</a> itaque nihil sunt accusantium quis porro beatae nemo.</p>
+
+        <p class="xpto destaque">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae eos, ipsum, dolores ipsa cumque corrupti <a href="doc.pdf">documento</a> quisquam eaque aut consectetur quo voluptatibus velit eveniet reprehenderit delectus enim quis quos? Doloremque, quisquam.</p>
+    </main>
+</body>
+</html>
