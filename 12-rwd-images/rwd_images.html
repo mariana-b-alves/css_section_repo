@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsible Images</title>
+    <style>
+        img{
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Responsible Images</h1>
+    <br>
+    <picture>
+        <source media="(max-width: 600px)" srcset="img-small.png">
+        <source media="(max-width: 1000px)" srcset="img-medium.png">
+        <source media="(max-width: 100vw)" srcset="img-large.png">
+        <img src="default.jpg" alt="">
+    </picture>
+
+    <hr>
+
+    <!--NOTA: Esta abordagem de tornar imagens responsive é melhor; tem melhor perfomance; não precisa de ir ao servidor "pedir" uma outra imagem-->
+    <img src="default.jpg" 
+        srcset="img-small.png 450w, img-medium.png, 990w, img-large.png, 1350w"
+        sizes="(max-width: 600px) 450px, (max-width: 100px), 990px, 1350pc"
+    >
+
+    <!--NOTA: Não devemos preocupar TANTO com as resoluções em responsive, mas em apresentar os conteúdos da melhor forma possível.-->
+
+    <!--NOTA: DPIs são mais para design e printing-->
+
+</body>
+</html>
